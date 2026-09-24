@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr.Priya — A Little Book of Memories</title>
+<title>Dear Priya — A Little Book of Memories</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
@@ -59,6 +59,7 @@ p{line-height:1.75;font-size:17px;margin-bottom:15px}
   justify-content:center;gap:8px;transition:.25s;box-shadow:0 4px 15px rgba(0,0,0,.25);margin:15px auto}
 .btn:hover{background:#3e2723;transform:translateY(-2px)}
 
+/* Closed Envelope Styling */
 .envelope-wrapper{margin:auto;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .closed-envelope {
   position: relative; width: 340px; height: 230px; background: #c8ab7b;
@@ -81,30 +82,6 @@ p{line-height:1.75;font-size:17px;margin-bottom:15px}
 .stamp-mark{position:absolute;top:12px;right:12px;border:2px solid rgba(94, 70, 53, 0.5);padding:3px 8px;
   font:16px 'Caveat';color:rgba(94, 70, 53, 0.8);transform:rotate(12deg);z-index:4;}
 
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:20px auto;max-width:800px;}
-.polaroid{background:#fff;padding:14px 14px 42px;box-shadow:2px 4px 15px rgba(0,0,0,.15);position:relative;transition:.3s}
-.polaroid:nth-child(1){transform:rotate(-3deg)}
-.polaroid:nth-child(2){transform:rotate(2deg)}
-.polaroid:nth-child(3){transform:rotate(4deg)}
-.polaroid:nth-child(4){transform:rotate(-2deg)}
-.polaroid:hover{transform:scale(1.04) rotate(0);z-index:2}
-.tape{position:absolute;background:rgba(255,255,255,.3);box-shadow:0 1px 3px rgba(0,0,0,.1);
-  width:100px;height:25px;z-index:4}
-.tape-1{top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg)}
-.polaroid-caption{position:absolute;bottom:8px;left:0;width:100%;text-align:center;font:24px 'Caveat';color:#333}
-
-.paper-sheet{background:#fdfbf7;padding:42px 55px;margin:0 auto;max-width:760px;box-shadow:3px 5px 15px rgba(0,0,0,.1);
-  position:relative;font:26px/1.6 'Caveat';color:#3b2f2f}
-.paper-sheet p{font:inherit;margin-bottom:18px}.paper-sheet:before{content:"";position:absolute;top:0;bottom:0;left:35px;width:2px;background:rgba(200,100,100,.3)}
-
-.board{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;padding:20px}
-.sticky{width:205px;min-height:160px;padding:25px 18px 18px;background:#fdf2a7;box-shadow:2px 4px 8px rgba(0,0,0,.15);
-  font:24px 'Caveat';text-align:center;position:relative}
-.sticky:after{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:#c0392b;border-radius:50%}
-.sticky:nth-child(1){background:#e0f2cb;transform:rotate(-4deg)}.sticky:nth-child(2){background:#ffe4e1;transform:rotate(3deg)}
-.sticky:nth-child(3){background:#d0f0f0;transform:rotate(-2deg)}.sticky:nth-child(4){background:#fcf4dd;transform:rotate(5deg)}
-.sticky h3{font-size:27px;border-bottom:1px dashed rgba(0,0,0,.2);padding-bottom:5px;margin-bottom:10px}
-
 .dark-mode{background:radial-gradient(circle at top,#2b1d3d,#111424);color:#fcebb6;align-items:center;justify-content:center;text-align:center}
 .dark-mode h1{color:#fff3d8;text-shadow:0 0 20px rgba(255,200,100,.5)}
 .dark-mode h2{color:#f9d976}
@@ -116,71 +93,38 @@ p{line-height:1.75;font-size:17px;margin-bottom:15px}
 .step-controls{display:flex;justify-content:space-between;gap:12px;width:100%;margin-top:auto;padding-top:25px}
 .step-controls .btn{margin:0}
 
-/* Video Overlay Styles */
-#video-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  z-index: 10000;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#bday-video {
-  width: 100%;
-  max-width: 800px;
-  max-height: 80vh;
-  object-fit: contain;
-}
-.close-video-btn {
-  margin-top: 25px;
-  padding: 12px 25px;
-  background: #c0392b;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  font-family: 'Playfair Display', serif;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
 @media(max-width:700px){
  body{padding:0;align-items:stretch}.book-container{height:100vh;min-height:0;border-radius:0}
  nav{padding:12px 14px;align-items:flex-start;flex-direction:column;gap:6px}
  nav b{font-size:27px}.nav-links{width:100%;justify-content:space-between;gap:2px}
  nav button{font-size:12px;padding:7px 6px}.page{padding:24px 16px}
- .gallery{gap:20px}.paper-sheet{padding:32px 28px 28px 42px;font-size:23px}
- .board{gap:20px;padding:10px 0}.sticky{width:calc(50% - 12px);min-width:135px;font-size:21px}
  .step-controls .btn{font-size:13px;padding:10px 14px}
 }
 @media(max-width:400px){
- .gallery{grid-template-columns:1fr} 
- .sticky{width:100%}.time-blocks{gap:5px}.time-block .lbl{font-size:9px}
+ .time-blocks{gap:5px}.time-block .lbl{font-size:9px}
  .closed-envelope{width: 280px; height: 190px;}
 }
 </style>
 </head>
-<body>      <!-- Background Audio Element -->
-<audio id="bg-music" loop>
-  <source src="Iktara Instrumental .mp3" type="audio/mpeg">
-</audio>
+<body>
+<div class="book-container">
 
-  <div class="book-container">
-
+<!-- Curtain Overlay -->
 <div id="curtain-wrapper" class="curtain-wrapper">
   <div class="curtain left"></div>
   <div class="curtain right"></div>
 </div>
 
 <nav>
-  <b>Hey Priya 🦋</b>
+  <b>Dear Priya ✨</b>
+  <div class="nav-links">
+    <button onclick="goToPage(0)" id="nav0" class="active-nav">Home</button>
+    <button onclick="goToPage(1)" id="nav1">Birthday 🎂</button>
+    <button onclick="goToPage(2)" id="nav2">Wait For It... 🧁</button>
+  </div>
 </nav>
 
+<!-- Page 0: The Proper Closed Envelope -->
 <section class="page active" id="page0">
   <div style="flex:1;display:flex;align-items:center">
     <div class="envelope-wrapper">
@@ -195,139 +139,68 @@ p{line-height:1.75;font-size:17px;margin-bottom:15px}
   </div>
 </section>
 
+<!-- Page 1: Birthday -->
 <section class="page dark-mode" id="page1">
-  <div style="margin: 40px 0; padding: 30px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; backdrop-filter: blur(10px);">
-    <h2 style="font-size: clamp(45px, 7vw, 60px); color: #f9d976; font-family: 'Caveat', cursive; margin-bottom: 10px; border:none; padding:0;">Happy Birthday 🎂</h2>
-    <h3 style="font-size: clamp(28px, 4vw, 35px); color: #fff3d8; font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 1px; text-align: center;">25 September 2004 ✨</h3>
+  <h2>Birthday Countdown 🎂</h2>
+  <div class="countdown-box">
+    <h3 style="font:600 24px 'Playfair Display';margin-bottom:20px">25 September ✨</h3>
+    <div class="time-blocks" id="countdown">
+      <div class="time-block"><span class="num" id="days">00</span><span class="lbl">Days</span></div><span>:</span>
+      <div class="time-block"><span class="num" id="hours">00</span><span class="lbl">Hours</span></div><span>:</span>
+      <div class="time-block"><span class="num" id="mins">00</span><span class="lbl">Mins</span></div><span>:</span>
+      <div class="time-block"><span class="num" id="secs">00</span><span class="lbl">Secs</span></div>
+    </div>
   </div>
-  <h1>Dr. Priya🕊️</h1>
+  <h1>Dr. Priya Gupta 🌟</h1>
   <p style="max-width:650px;margin:20px auto;font:28px 'Caveat'">May your dreams be bigger, your worries smaller, your smile brighter and your heart always as kind as it is today. 💛</p>
-  <div class="step-controls"><button class="btn" onclick="prevPage()">↩️ Back</button><button class="btn" onclick="nextPage()">Memories 📸 ➜</button></div>
+  <div class="step-controls">
+    <button class="btn" onclick="prevPage()">↩️ Back</button>
+    <button class="btn" onclick="nextPage()">Next ➜</button>
+  </div>
 </section>
 
+<!-- Page 2: The Under Construction Page -->
 <section class="page" id="page2">
-  <h2>A Few Moments of You 📸</h2><p class="center" style="opacity:.7">Different moments, same you… ✨</p>
-  <div class="gallery">
-    <!-- Image 1 -->
-    <div class="polaroid">
-      <div class="tape tape-1"></div>
-      <img src="file_0000000073a481f5b7d4cf184027d7c6.png" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;" alt="Future Doctor">
-      <div class="polaroid-caption"></div>
-    </div>
-    <!-- Image 2 -->
-    <div class="polaroid">
-      <div class="tape tape-1"></div>
-      <img src="file_000000005448821197c7cdf452d4b83b.png" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;" alt="Always with me">
-      <div class="polaroid-caption"></div>
-    </div>
-    <!-- Image 3 -->
-    <div class="polaroid">
-      <div class="tape tape-1"></div>
-      <img src="IMG_20260918_021951.png" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;" alt="Memories">
-      <div class="polaroid-caption"></div>
-    </div>
-    <!-- Image 4 -->
-    <div class="polaroid">
-      <div class="tape tape-1"></div>
-      <img src="1000136787.jpeg" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block;" alt="Group Photo">
-      <div class="polaroid-caption"></div>
-    </div>
-  </div>
-  <div class="step-controls"><button class="btn" onclick="prevPage()">⬅️ Back</button><button class="btn" onclick="nextPage()">Read Letter 💌 ➜</button></div>
-</section>
-
-<section class="page" id="page3">
-  <h2>Things I Never Say Enough… 💌</h2>
-  <div class="paper-sheet">
-    <p>Hey Priya,</p>
-    <p> Happy birthday 🩵
-Pta nahi yaar, kaise likhu ye sab without making it sound cheesy 😭. You’ve never really felt like “just a best friend”... you’ve always been more like a sister to me.
-After completing school se leke ab tak, there’s just been so much — random talks, bakchodi, fights, advice, aur woh sab chhoti chhoti cheezein jo shayad normal lagti hain but actually mean a lot.
-And honestly, I’ve always looked up to you. The way you are, the way you handle things, the person you are... I genuinely admire that. Maybe isi liye tu mere liye thodi si best friend, thodi si didi aur thodi si idol bhi hai 😂
-Bas thank you for being there, for listening to my nonsense and for being you. I really hope life gives you everything you deserve.
-    Stay the same🕊️,
-        Happy Birthday once again. 🌻</p>
-    <p style="text-align:right;margin-top:30px">— Your friend 🤍</p>
-  </div>
-  <div class="step-controls"><button class="btn" onclick="prevPage()">⬅️ Back</button><button class="btn" onclick="nextPage()">Fun Archives 🗂️ ➜</button></div>
-</section>
-
-<section class="page" id="page4">
-  <h2>Best Friend Archives 🗂️</h2><p class="center" style="opacity:.7">Because life is better with you — and your nonsense 😂</p>
-  <div class="board">
-    <div class="sticky"><h3> Savage Queen 👑</h3><p>You roast me better than anyone. 🔥</p></div>
-    <div class="sticky"><h3> Kindred 🧠</h3><p>Similar mind, different perspectives 🤯</p></div>
-    <div class="sticky"><h3>Emergency Call ☎️</h3><p>Always there… for literally everything. 🫂</p></div>
-    <div class="sticky"><h3>Study Icon 📚</h3><p>You motivate me, even when you are the one not studying. 😭</p></div>
-  </div>
-  <p class="center handwriting" style="margin-top:30px;font-size:28px">P.S. Stop being so perfect… it's annoying. 😤💖</p>
-  <div class="step-controls"><button class="btn" onclick="prevPage()">⬅️ Back</button><button class="btn" onclick="nextPage()">One Last Thing 👀 ➜</button></div>
-</section>
-
-<section class="page" id="page5">
   <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
-    <h1 style="font-size: clamp(40px, 6vw, 60px); margin-bottom: 20px;">That's all I've got, bro.🛐</h1>
-    <p style="font-size: 38px; font-family: 'Caveat', cursive; color: #4e342e; font-weight: bold;">Let me breathe. 😮‍💨</p>
-    <p style="opacity: 0.7; margin-top: 25px; font-size: 22px;">(Now just tap the cake! 🎂)</p>
-    
-    <div style="margin-top: 40px; display: flex; align-items: center; justify-content: center;">
-      <span 
-        style="font-size: 130px; line-height: 1; cursor: pointer; transition: transform 0.2s; user-select: none;" 
-        onclick="playBirthdayVideo()" 
-        onmouseover="this.style.transform='scale(1.1)'"
-        onmouseout="this.style.transform='scale(1)'">
-        🎂
-      </span>
-    </div>
+    <h1 style="font-size: clamp(40px, 6vw, 60px); margin-bottom: 20px;">Work in Progress... 🛠️</h1>
+    <p style="font-size: 38px; font-family: 'Caveat', cursive; color: #4e342e; font-weight: bold;">Kaam chalu hai sbr kro.. it will be sweet 🧁</p>
+    <button class="btn" style="margin-top: 40px; padding: 15px 30px;" onclick="goToPage(0)">🏠 Back to Start</button>
   </div>
 </section>
 
-</div>
-
-<!-- Surprise Video Overlay -->
-<div id="video-overlay">
-  <video id="bday-video" controls playsinline>
-    <source src="VID_20260918_102435_978.mp4" type="video/mp4">
-  </video>
 </div>
 
 <script>
 let currentPage = 0;
-const totalPages = 6;
+const totalPages = 3; // Reduced total pages to 3
 let isAnimating = false;
-let musicStarted = false;
-const bgMusic = document.getElementById('bg-music');
-
-// Screen par pehli baar click karte hi gaana start hoga
-document.addEventListener('click', function startMusic() {
-    if (!musicStarted) {
-        bgMusic.play().catch(e => console.log("Audio play failed:", e));
-        musicStarted = true;
-        document.removeEventListener('click', startMusic);
-    }
-}, { once: true });
 
 function goToPage(pageNum){
   if (currentPage === pageNum || isAnimating) return;
   isAnimating = true;
   
+  // 1. Trigger the curtain closing
   const curtains = document.getElementById('curtain-wrapper');
   curtains.classList.add('active');
 
+  // 2. Wait for curtains to fully close, then swap pages behind them
   setTimeout(() => {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active-nav'));
     
     document.getElementById('page' + pageNum).classList.add('active');
     
+    // Highlight nav if it exists
     const navBtn = document.getElementById('nav' + pageNum);
     if(navBtn) navBtn.classList.add('active-nav');
     
     currentPage = pageNum;
     document.querySelector('.page.active').scrollTo({ top: 0, behavior: 'auto' });
 
+    // 3. Open the curtains to reveal the new page
     curtains.classList.remove('active');
     
+    // 4. Reset animation lock after curtains are open
     setTimeout(() => { isAnimating = false; }, 600); 
   }, 600); 
 }
@@ -335,41 +208,25 @@ function goToPage(pageNum){
 function nextPage(){ if(currentPage < totalPages - 1) goToPage(currentPage + 1) }
 function prevPage(){ if(currentPage > 0) goToPage(currentPage - 1) }
 
-function playBirthdayVideo() {
-  const overlay = document.getElementById('video-overlay');
-  const video = document.getElementById('bday-video');
-    // Video chalne par music pause karega
-  if(musicStarted) {
-      bgMusic.pause();
-  }
-
-  overlay.style.display = 'flex';
-  video.currentTime = 0; 
+function updateCountdown(){
+  const now = new Date();
+  let year = now.getFullYear();
+  let target = new Date(`September 25, ${year} 00:00:00`);
+  if(now >= target) target = new Date(`September 25, ${year+1} 00:00:00`);
   
-  let playPromise = video.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(error => {
-      console.log("Auto-play prevented by browser:", error);
-    });
+  const diff = target - now;
+  if(diff > 0){
+    document.getElementById('days').textContent = Math.floor(diff/86400000).toString().padStart(2,'0');
+    document.getElementById('hours').textContent = Math.floor(diff/3600000%24).toString().padStart(2,'0');
+    document.getElementById('mins').textContent = Math.floor(diff/60000%60).toString().padStart(2,'0');
+    document.getElementById('secs').textContent = Math.floor(diff/1000%60).toString().padStart(2,'0');
+  } else {
+    document.getElementById('countdown').innerHTML = "<h2 style='color:#fff;margin:0'>Happy Birthday! 🎉🎂</h2>";
   }
 }
 
-function closeVideo() {
-  const overlay = document.getElementById('video-overlay');
-  const video = document.getElementById('bday-video');
-  
-  video.pause();
-  overlay.style.display = 'none';
-  
-  // Video band hone par music wapas chalne lagega
-  if(musicStarted) {
-      bgMusic.play().catch(e => console.log("Audio resume failed:", e));
-  }
-
-  goToPage(0); 
-}
-
-document.getElementById('bday-video').onended = closeVideo;
+setInterval(updateCountdown, 1000);
+updateCountdown();
 </script>
 </body>
 </html>
